@@ -29,8 +29,8 @@ else()
 endif()
 
 # Build executable
-file(GLOB_RECURSE SOURCES "source/*.cpp" "source/*.c")
-add_executable(${PROJECT_NAME} app.cpp ${SOURCES})
+add_subdirectory(source)
+add_executable(${PROJECT_NAME} app.cpp ${PROJECT_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${WX_LIBS})
